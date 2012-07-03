@@ -15,5 +15,7 @@ You can find templates and an inkscape/gimp color palette in resources.
 - The microfig template is from [Eurobricks.com](http://eurobricks.com)
 - The palette is based on color tables from [Peeron.com](http://peeron.com) and Eurobrick's member Imperial Shadow.
 
-Licencing
+Licensing
 --
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+Attribution is not required but always appreciated.
