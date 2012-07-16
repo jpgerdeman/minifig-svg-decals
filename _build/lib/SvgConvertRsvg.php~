@@ -1,0 +1,8 @@
+<?php
+class SvgConvertRsvg extends SvgConvert
+{
+	private function generateCommand()
+	{
+		return "rsvg-convert --format=".$this->format." --output='".$this->outfile."' '".$this->infile."' 2>&1";		
+	}
+}

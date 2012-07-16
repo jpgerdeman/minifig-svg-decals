@@ -1,0 +1,8 @@
+<div class="decal">
+	<div class="title"><?php echo $title;?></div>
+	<img src="<?php echo $thumbnail;?>" />
+		<div class="links">
+			<a href="<?php echo $png;?>">png</a> |
+			<a href="<?php echo $svg; ?>">svg</a>
+		</div>
+	</div>

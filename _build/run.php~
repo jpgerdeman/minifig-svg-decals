@@ -1,0 +1,40 @@
+<?php
+include_once __DIR__.'/config.php';
+include_once __DIR__.'/lib/GitPath.php';
+include_once __DIR__.'/lib/Logger.php';
+include_once __DIR__.'/lib/EchoLogger.php';
+include_once __DIR__.'/lib/FileLogger.php';
+include_once __DIR__.'/lib/SvgConvert.php';
+include_once __DIR__.'/lib/SvgConvertRsvg.php';
+include_once __DIR__.'/lib/SvgConvertInkscape.php';
+include_once __DIR__.'/lib/SvgConvertException.php';
+
+$logger = new EchoLogger();
+
+$logger->log("master branch at: ".$configuration['masterpath']);
+$logger->log("gh-pages branch at: ".$configuration['gh-path']);
+
+$workspace = new RecursiveIteratorIterator( new RecursiveDirectoryIterator($configuration['masterpath']) );
+
+foreach( $workspace as $path )
+{
+	$d = new GitPath($path);
+	$d->setLogger($logger)
+		->setMasterBranchPath($configuration['masterpath'])
+		->setGhBranchPath($configuration['gh-path']);
+
+	if( $d->isSvg() )
+	{
+		// TODO: @ is the evil!
+		@mkdir( dirname($d->computeGhPath()), 0777, true);
+
+		$converter = SvgConverter::factory($configuration['renderer']);
+		$converter->setLogger($logger);
+		$converter->setInfile($d->getMasterPath())
+			->setOutfile($d->computePngPath())
+			->setDpi($configuration['dpi'])
+			->exec();
+
+		copy($d->getMasterPath, $d->computeGhPath());
+	}
+}

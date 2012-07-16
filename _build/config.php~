@@ -1,0 +1,5 @@
+<?php
+$configuration['dpi'] = 90;
+$configuration['masterpath'] = '';
+$configuration['gh-path'] = '';
+$configuration['renderer'] = 'rsvg';

@@ -1,0 +1,54 @@
+<?php
+abstract class SvgConvert
+{
+	protected $dpiX = 90;
+	protected $dpiY = 90;
+	protected $infile = '';
+	protected $outfile = '';
+
+	public function setInfile($path)
+	{
+		$this->infile = $path;
+		return $this;
+	}
+
+	public function setOutfile($path, $format = 'png' )
+	{
+		$this->outfile = $path;
+		$this->format = $format;
+		return $this;
+	}
+
+	public function setDpi($dpi)
+	{
+		$this->dpiX = $dpi;
+		$this->dpiY = $dpi;
+		return $this;
+	}
+
+	public function useInkscape($bool)
+	{
+		$this->useInkscape = $bool;
+		return $this;
+	}
+
+	public function exec()
+	{
+		$output = array();
+		$returncode = 0;
+		exec( $this->generateCommand(), $output, $returncode );
+
+		if( $returncode != 0 )
+		{
+			throw new SvgConvertException($cmd, $returncode, $output);
+		}
+	}
+
+	abstract protected function generateCommand();
+
+	static public function factory( $converter = 'rsvg' )
+	{
+		$class = __CLASS__.ucfirst($converter);
+		return new $class;
+	}
+}

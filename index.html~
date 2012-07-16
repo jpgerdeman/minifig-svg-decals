@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+          <h1>Minifig SVG Decals</h1>
+
+<p>Collection of SVG files for use as decals on LEGO Minifigs.</p>
+
+<h2>Short Introduction</h2>
+
+<p>The figures directory contains completed designs.</p>
+
+<p>The library contains reusable parts like clothing, torsos and logos.</p>
+
+<p>You can find templates and an inkscape/gimp color palette in resources.</p>
+
+<ul>
+<li>The minifig template is from <a href="http://www.minifigcustomizationnetwork.com/">minifigcustomizationnetwork.com</a>
+</li>
+<li>The microfig template is from <a href="http://eurobricks.com">Eurobricks.com</a>
+</li>
+<li>The palette is based on color tables from <a href="http://peeron.com">Peeron.com</a> and Eurobrick's member Imperial Shadow.</li>
+</ul><h2>Licensing</h2>
+
+<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+Attribution is not required but always appreciated.</p>
+<ul>
+  	  {% assign pages_list = site.pages %}  
+  	  {% include JB/pages_list %}
+  	</ul>
+      
