@@ -28,9 +28,9 @@ Usage:
       {% if group == null or group == node.group %}
         {% capture depth %}{{ node.url | split:'/' | size }}{% endcapture %}
       	{% if page.url == node.url %}
-      	<li class="depth-{{depth}} active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
+      	<li class="depth-{{depth}} active"><a href="{{site.url}}/{{site.baseurl}}/{{node.url}}" class="active">{{node.title}}</a></li>
       	{% else %}
-      	<li class="depth-{{depth}} {{node.url}}"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+      	<li class="depth-{{depth}}"><a href="{{site.url}}/{{site.baseurl}}/{{node.url}}">{{node.title}}</a></li>
       	{% endif %}
         {% assign depth = nil %}
       {% endif %}
