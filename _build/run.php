@@ -32,12 +32,8 @@ foreach( $workspace as $path )
 		@mkdir( dirname($d->computeGhPath()), 0777, true);
 
 		$index = dirname($d->computeGhPath()).'/index.html';
-		$logger->log($index);
 		if( !isset($reset_indices[$index]) )
 		{			
-			$logger->log(print_r($reset_indices, true));
-			$logger->log($index);
-
 			$title = explode( '/', dirname($d->computeGhPath()));
 			$title = array_pop($title);			
 			

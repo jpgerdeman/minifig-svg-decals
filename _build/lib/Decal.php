@@ -45,12 +45,15 @@ class Decal
 		};
 		$pathInfo = pathinfo($this->gitpath->computeGhPath());
 		$index = $pathInfo['dirname'].'/index.html';
-		$root = $this->configuration['gh-path'];
 		
+		$link_to = function($path) use ($this) {
+			$root = $this->configuration
+		}
+
 		$title = $pathInfo['filename'];		
-		$png = str_replace('//', '/', str_replace($root, '/', $this->gitpath->computePngPath()));
-		$thumbnail = str_replace('//', '/', str_replace($root, '/', $this->gitpath->computeThumbnailPath()));
-		$svg =  str_replace('//', '/', str_replace($root, '/', $this->gitpath->computeGhPath()));
+		$png = $this->relativePath( $this->gitpath->computePngPath() );
+		$thumbnail = $this->relativePath( $this->gitpath->computeThumbnailPath() );
+		$svg =  $this->relativePath( $this->gitpath->computeGhPath() );
 
 		ob_start();
 		include __DIR__.'/../templates/decal.template';
@@ -62,6 +65,17 @@ class Decal
 	public function setLogger($logger)
 	{
 		$this->logger = $logger;
+	}
+
+	protected function relativePath($path)
+	{
+		$root = $this->configuration['gh-path'];
+		$baseurl = $this->configuration['base-url'];
+
+		$link = str_replace($root, '/', $path);
+		$link = str_replace('//', '/', $link);
+		$link = $baseurl.$link;
+		return $link;
 	}
 
 	protected function log( $msg, $severity = Logger::DEBUG)
