@@ -2,13 +2,22 @@
 
 class EchoLogger implements Logger
 {
+    private $minloglvl = null;
 	public function log( $msg, $severity = self::DEBUG, $category = null )
 	{
-		$time = date( 'Y.m.d H:i:s' );
-		$severity = strtoupper($this->mapSeverityLevel( $severity ));
-		$nl = $this->isCLi()?PHP_EOL:"<br/>".PHP_EOL;
-		echo $time." ".$severity." ".$category.": ".$msg.$nl.$nl;
+        if( is_null($this->minloglvl) || $severity <= $this->minloglvl)
+        {
+            $time = date( 'Y.m.d H:i:s' );
+            $severity = strtoupper($this->mapSeverityLevel( $severity ));
+            $nl = $this->isCLi()?PHP_EOL:"<br/>".PHP_EOL;
+            echo $time." ".$severity." ".$category.": ".$msg.$nl.$nl;
+        }
 	}
+    
+    public function setMinimumLogLevel($severity)
+    {
+        $this->minloglvl = $severity;
+    }
     
     protected function isCli() {
  

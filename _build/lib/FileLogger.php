@@ -4,8 +4,15 @@ class FileLogger implements Logger
 {
 	private $filename = 'log';
     
-	/* @var der FileHandle der Log Datei */
+	/* @var FileHandle of the log file */
 	private $fh;
+    
+    private $minloglvl = null;
+	    
+    public function setMinimumLogLevel($severity)
+    {
+        $this->minloglvl = $severity;
+    }
 
 	public function __construct( $filename )
 	{
@@ -15,9 +22,12 @@ class FileLogger implements Logger
 
 	public function log( $msg, $severity = self::DEBUG, $category = null)
 	{
-		$time = date( 'Y.m.d H:i:s' );
-		$severity = strtoupper( $this->mapSeverityLevel($severity));
-		fwrite($this->fh, $time." ".$severity." ".$category.": ".$msg."\n");
+        if( is_null($this->minloglvl) || $severity <= $this->minloglvl)
+        {
+            $time = date( 'Y.m.d H:i:s' );
+            $severity = strtoupper( $this->mapSeverityLevel($severity));
+            fwrite($this->fh, $time." ".$severity." ".$category.": ".$msg."\n");
+        }
 	}
 
 	public function __destruct()

@@ -3,7 +3,9 @@ class SvgConvertRsvg extends SvgConvert
 {
 	protected function generateCommand()
 	{
-		$cmd = "rsvg-convert --keep-aspect-ratio --format=".$this->format." --output='".$this->outfile."' ";
+        // On Windows single quotation marks are ignored. use double quotation
+        // marks instead
+		$cmd = "rsvg-convert --keep-aspect-ratio --format=".$this->format." --output=\"".$this->outfile."\" ";
 		if( !is_null($this->width) )
 		{
 			$cmd.="--width=".$this->width." ";
@@ -13,7 +15,7 @@ class SvgConvertRsvg extends SvgConvert
 		{
 			$cmd.="--dpi-x=".$this->dpi." "."--dpi-y=".$this->dpi." ";
 		}
-		$cmd.= "'".$this->infile."' 2>&1";		
+		$cmd.= "\"".$this->infile."\" 2>&1";		
 	
 		return $cmd;
 	}
