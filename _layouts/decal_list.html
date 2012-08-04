@@ -3,53 +3,119 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="{{site.url}}/{{site.baseurl}}/stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{site.url}}/{{site.baseurl}}/stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{site.url}}/{{site.baseurl}}/stylesheets/print.css" media="print" />
+    <title>Minifig Decals and more Repository</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Le styles -->
+    <link href="{{site.url}}/{{site.baseurl}}/stylesheets/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="{{site.url}}/{{site.baseurl}}/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http:/html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Minifig-svg-decals by jpgerdeman</title>
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="./bootstrap/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./bootstrap/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./bootstrap/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./bootstrap/ico/apple-touch-icon-57-precomposed.png">
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Minifig-svg-decals</h1>
-        <h2>Collection of SVG files for use as decals on LEGO Minifigs</h2>
-        <a href="https://github.com/jpgerdeman/minifig-svg-decals" class="button"><small>View project on</small>GitHub</a>
-        <a href="https://github.com/jpgerdeman/minifig-svg-decals/zipball/master" class="button download">
-            <small>Download</small>
-            .zip file
-          </a>
-      </div>
-    </header>
+   
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-	<div class="decals">
-	{{content}}
-	</div>
-        </section>        
-        <aside id="sidebar">
-          <navigation>
-            <ul>
-              <li><a href="{{site.url}}/{{site.baseurl}}/index.html">Home</a></li>
-              <li> Decals
-                <ul>                  
-                  {% include decal_menu %}
-                </ul>
-              </li>
-          </navigation>
-           <p>This page is based on the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a> and is hosted  by <a href="pages.github.com">GitHub Pages</a>.</p>
-        </aside>
+	 
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Minifig SVG decals</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+			  <li><a href="#download">Download</a></li>
+			  <li><a href="#download">View on GitHub</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
     </div>
+
+	<div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+		    {% include decal_menu %}
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="well">
+            <h1>Minifig SVG decals!</h1>
+            <p>Collection of SVG files for use as decals on LEGO Minifigs. This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Attribution is not required but always appreciated.</p>
+            <p><a class="btn btn-primary btn-large">Learn more</a></p>
+          </div>
+          <div class="well">
+			<ul class="thumbnails" id="previews">
+				{{content}}
+			  
+			</ul>
+          </div><!--/row-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Minifig SVG decals. This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Attribution is not required but always appreciated.</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+
+
+
+
+ <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/jquery.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-transition.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-alert.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-modal.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-dropdown.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-scrollspy.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-tab.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-tooltip.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-popover.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-button.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-collapse.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-carousel.js"></script>
+    <script src="{{site.url}}/{{site.baseurl}}/javascripts/bootstrap-typeahead.js"></script>
+	<script src="{{site.url}}/{{site.baseurl}}/javascripts/masonry.min.js"></script>
+	<script>
+	  window.onload = function() {
+		  var wall = new Masonry( document.getElementById('previews'), {
+			// options...
+		  });
+		};
+	</script>
 
   
   </body>

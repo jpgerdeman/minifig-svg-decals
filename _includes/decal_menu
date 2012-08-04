@@ -1,10 +1,8 @@
 <ul>
-<li class='depth-3'><a class='depth-3' href='{{site.url}}/minifig-svg-decals/decals/index.html'>Decal Overview</a></li>
-<li class='depth-4'>elements</li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/shields/index.html'>shields</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/tiles/index.html'>tiles</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/wedge/index.html'>wedge</a></li>
-<li class='depth-4'><a class='depth-4' href='{{site.url}}/minifig-svg-decals/decals/figures/index.html'>figures</a></li>
+<li class='depth-4'><a class='depth-4' href='{{site.url}}/minifig-svg-decals/decals/faces/index.html'>faces</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/figures/city-farm/index.html'>city-farm</a></li>
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/figures/fantasy/Harry Potter/index.html'>Harry Potter</a></li>
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/figures/fantasy/Lord of the Rings/index.html'>Lord of the Rings</a></li>
@@ -12,10 +10,12 @@
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/figures/fantasy/Zelda/index.html'>Zelda</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/figures/fantasy/index.html'>fantasy</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/figures/historic/index.html'>historic</a></li>
+<li class='depth-4'><a class='depth-4' href='{{site.url}}/minifig-svg-decals/decals/figures/index.html'>figures</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/figures/other/index.html'>other</a></li>
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/figures/other/sherlock-bbc/index.html'>sherlock-bbc</a></li>
+<li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/figures/scifi/star wars/index.html'>star wars</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/figures/super heroes/index.html'>super heroes</a></li>
-<li class='depth-4'>library</li>
+<li class='depth-3'><a class='depth-3' href='{{site.url}}/minifig-svg-decals/decals/index.html'>decals</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/library/armor/index.html'>armor</a></li>
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/library/clothes/belts/index.html'>belts</a></li>
 <li class='depth-6'><a class='depth-6' href='{{site.url}}/minifig-svg-decals/decals/library/clothes/coats/index.html'>coats</a></li>

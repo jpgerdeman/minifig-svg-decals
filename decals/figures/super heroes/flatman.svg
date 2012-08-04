@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="53.857px"
+   height="45.354px"
+   viewBox="0 0.233 53.857 45.354"
+   enable-background="new 0 0.233 53.857 45.354"
+   xml:space="preserve"
+   id="svg2"
+   inkscape:version="0.48.1 "
+   sodipodi:docname="flatman.svg"
+   inkscape:export-filename="D:\Bricks\Decals\designs\superheroes\flatman\flatman.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"><metadata
+   id="metadata15"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs13" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="640"
+   inkscape:window-height="480"
+   id="namedview11"
+   showgrid="false"
+   inkscape:zoom="6.416"
+   inkscape:cx="26.93"
+   inkscape:cy="22.68"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="svg2" />
+<g
+   id="base">
+	<path
+   id="torso_1_"
+   connector-curvature="0"
+   fill="#0075BF"
+   stroke="#231F20"
+   stroke-width="0.3125"
+   d="M0.942,44.551   C9.675-2.741,6.284,1.873,15.21,1.696h23.439c8.927,0.177,5.535-4.438,14.266,42.855H0.942z" />
+</g>
+<g
+   id="design">
+	<path
+   fill="#001423"
+   d="M18.616,9.866v34.685h16.625V9.867c2.567-1.798,4.193-4.408,4.193-7.323c0-0.243-0.021-0.691-0.021-0.691   H14.443c0,0-0.021,0.449-0.021,0.691C14.423,5.458,16.049,8.068,18.616,9.866z"
+   id="path7" />
+	<path
+   fill="#EFF0ED"
+   d="M20.982,10.829h11.893v2.931h-9.01v8.994h8.321v2.892h-8.321v13.661h-2.883V10.829z"
+   id="path9" />
+</g>
+</svg>
