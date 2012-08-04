@@ -2,8 +2,9 @@ safe:        false
 auto:        false
 server:      false
 server_port: 4000
-baseurl: minifig-svg-decals
-url: http://localhost:4000
+baseurl:    /minifig-svg-decals
+url: http://jpgerdeman.github.com
+
 source:      .
 destination: ./_site
 plugins:     ./_plugins
