@@ -30,38 +30,14 @@
     <link rel="apple-touch-icon-precomposed" href="./bootstrap/ico/apple-touch-icon-57-precomposed.png">
   </head>
   <body>
-   
-
-	 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Minifig SVG decals</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="{{site.url}}/{{site.baseurl}}">Home</a></li>
-			  <li><a href="https://github.com/jpgerdeman/minifig-svg-decals/zipball/master">Download</a></li>
-			  <li><a href="https://github.com/jpgerdeman/minifig-svg-decals">View on GitHub</a></li>
-        <li><a href="https://github.com/jpgerdeman/minifig-svg-decals/wiki">Wiki</a></li>
-              '<li><a href="{{site.url}}/{{site.baseurl}}">About</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+   	 
+    {% include nav_menu %}
 
 	<div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
 		    {% include decal_menu %}
-            </ul>
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">

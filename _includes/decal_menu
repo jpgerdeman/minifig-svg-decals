@@ -1,4 +1,4 @@
-<ul>
+<ul class="nav nav-list">
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/shields/index.html'>shields</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/tiles/index.html'>tiles</a></li>
 <li class='depth-5'><a class='depth-5' href='{{site.url}}/minifig-svg-decals/decals/elements/wedge/index.html'>wedge</a></li>

@@ -31,62 +31,13 @@
 
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Minifig SVG decals</a>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-			  <li><a href="#download">Download</a></li>
-			  <li><a href="#download">View on GitHub</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
+    {% include nav_menu %}
 
 	<div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-			<li class="nav-header active"><a href="#">Overview</a></li>
-			  <li class="nav-header"><a href="#">All decals</a></li>
-              <li class="nav-header"><a href="#">Figures</a></li>
-			  <li><a href="#">City/Farm</a></li>
-              <li><a href="#">Fantasy</a>
-			    <ul class="nav nav-list">
-				  <li><a href="#">Harry Potter</a>
-				  <li><a href="decals-list.html">Lord of the Rings</a>
-				</ul>
-			  </li>
-              
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Elements</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li class="nav-header">Library</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-			  <li class="nav-header">Resources</li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-            </ul>
+            {% include decal_menu %}
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">
@@ -96,17 +47,7 @@
             <p><a class="btn btn-primary btn-large">Learn more</a></p>
           </div>
           <div  class="well">
-			<h2>Overview</h2>
-			<p>The figures directory contains completed designs.</p>
-			<p>The library contains reusable parts like clothing, torsos and logos.</p>
-			<p>You can find templates and an inkscape/gimp color palette in resources.</p>
-			<p>Attributions
-			  <ul>
-			    <li>The minifig template is from minifigcustomizationnetwork.com</li>
-			    <li>The microfig template is from Eurobricks.com </li>
-			    <li>The palette is based on color tables from Peeron.com and Eurobrick's member Imperial Shadow.</li>
-			  </ul>
-			</p>
+			{{content}}
           </div><!--/row-->
         </div><!--/span-->
       </div><!--/row-->
