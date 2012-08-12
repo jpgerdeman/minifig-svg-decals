@@ -9,45 +9,53 @@ include_once __DIR__.'/lib/SvgConvertRsvg.php';
 include_once __DIR__.'/lib/SvgConvertInkscape.php';
 include_once __DIR__.'/lib/SvgConvertException.php';
 include_once __DIR__.'/lib/Decal.php';
+include_once __DIR__.'/lib/Config.php';
+include_once __DIR__.'/lib/Index.php';
+include_once __DIR__.'/lib/IndexFacade.php';
+include_once __DIR__.'/lib/DecalWorker.php';
+include_once __DIR__.'/lib/TimestampDecalWorker.php';
 
 $logger = new EchoLogger();
+$config = new Config($configuration);
+//$logger->setMinimumLogLevel(Logger::INFO);
+$logger->log("Running with the following configuration:".PHP_EOL.$config->__toString(), Logger::INFO);
+$thumbnailRenderer = SvgConvert::factory($config->getRenderer());
+$thumbnailRenderer->setWidth($config->getThumbnailWidth())
+        ->setLogger($logger);
 
-$logger->log("master branch at: ".$configuration['masterpath']);
-$logger->log("gh-pages branch at: ".$configuration['gh-path']);
+$pngRenderer = SvgConvert::factory($config->getRenderer());
+$pngRenderer->setDpi($config->getOutputDpi())
+        ->setLogger($logger);
 
+$worker = new TimestampDecalWorker();
+$worker->setThumbnailRenderer($thumbnailRenderer);
+$worker->setPngRenderer($pngRenderer);
+$worker->setLogger($logger);
+
+$indices = new IndexFacade();
+$indices->setTemplatePath(__DIR__.DIRECTORY_SEPARATOR."templates".DIRECTORY_SEPARATOR."decal.template");
+$indices->setConfig($config);
+$indices->setLogger($logger);
 $workspace = new RecursiveIteratorIterator( new RecursiveDirectoryIterator($configuration['masterpath']) );
-
-	$reset_indices = array();
 foreach( $workspace as $path )
 {
 	$d = new GitPath($path);
-	$d->setLogger($logger)
-		->setMasterBranchPath($configuration['masterpath'])
-		->setGhBranchPath($configuration['gh-path']);
 	
 	if( $d->isSvg() )
 	{
-		$logger->log("processing $path");
+		$logger->log("processing $path", Logger::INFO);
+		$decal = new Decal($path, $config);
+        $decal->setLogger($logger);
 		// TODO: @ is the evil!
-		@mkdir( dirname($d->computeGhPath()), 0777, true);
+		@mkdir( dirname($decal->computeTargetPath()), 0777, true);
 
-		$index = dirname($d->computeGhPath()).'/index.html';
-		if( !isset($reset_indices[$index]) )
-		{			
-			$title = explode( '/', dirname($d->computeGhPath()));
-			$title = array_pop($title);			
-			
-			$reset_indices[$index] = $index;
-			unlink($index);
-			$html = file_get_contents(__DIR__.'/templates/index.html');
-			$html = str_replace('%title%', $title, $html);
-			file_put_contents($index, $html);
-		}
-
-		$decal = new Decal($path, $configuration, $logger);
-		$decal->renderThumbnail();
-		$decal->renderPng();
-		$decal->copySVG();
-		$decal->appendIndex();
+        $logger->log("creating decal");		
+        $worker->setDecal($decal);
+        $worker->renderThumbnail();
+#		$worker->renderPng();
+#		$worker->copySVG();
+		$indices->addDecal($decal);
 	}
 }
+
+$indices->writeMenu();

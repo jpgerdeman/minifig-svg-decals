@@ -1,8 +1,15 @@
-<div class="decal">
-	<div class="title"><?php echo $title;?></div>
-	<img src="<?php echo $thumbnail;?>" />
-		<div class="links">
+<?php
+$png = str_replace(DIRECTORY_SEPARATOR, '/', $png);
+$svg = str_replace(DIRECTORY_SEPARATOR, '/', $svg);
+$thumbnail = str_replace(DIRECTORY_SEPARATOR, '/', $thumbnail);
+?>
+<li class="decal item">
+	<div class="thumbnail">
+		<h5><?php echo $title;?></h5>
+		<img src="<?php echo $thumbnail;?>" />
+		<p>
 			<a href="<?php echo $png;?>">png</a> |
 			<a href="<?php echo $svg; ?>">svg</a>
-		</div>
+		</p>
 	</div>
+</li>
