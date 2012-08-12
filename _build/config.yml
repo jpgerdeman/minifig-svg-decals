@@ -1,0 +1,7 @@
+---
+output_dpi: 600
+thumbnail_width: 90
+masterpath: <%=app_root%>/../../../minifig-svg-decals
+ghpath: <%=app_root%>/..
+renderer: inkscape
+base_url: /minifig-svg-decals
