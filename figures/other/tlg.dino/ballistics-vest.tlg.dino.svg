@@ -5,9 +5,9 @@
 	 width="117.764px" height="48.189px" viewBox="0 0 117.764 48.189" enable-background="new 0 0 117.764 48.189"
 	 xml:space="preserve">
 <g id="torso-base">
-	<path id="torso-front" inkscape:connector-curvature="0" fill="#DCC291" stroke="#DCC291" stroke-width="0.3125" d="M2.358,45.644
+	<path id="torso-front" fill="#DCC291" stroke="#DCC291" stroke-width="0.3125" d="M2.358,45.644
 		C11.091-1.65,7.701,2.964,16.626,2.787h23.44c8.926,0.177,5.535-4.438,14.266,42.857H2.358z"/>
-	<path id="torso-back" inkscape:connector-curvature="0" fill="#DCC291" stroke="#DCC291" stroke-width="0.3125" d="M63.43,45.644
+	<path id="torso-back" fill="#DCC291" stroke="#DCC291" stroke-width="0.3125" d="M63.43,45.644
 		C72.162-1.65,68.773,2.964,77.697,2.788h23.441c8.926,0.177,5.535-4.438,14.266,42.856H63.43z"/>
 </g>
 <g id="front-design">
