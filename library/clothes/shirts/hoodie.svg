@@ -4,7 +4,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="53.858px" height="45.354px" viewBox="0 0 53.858 45.354" enable-background="new 0 0 53.858 45.354" xml:space="preserve">
 <g id="torso">
-	<path id="base" inkscape:connector-curvature="0" fill="#ED1C24" stroke="#231F20" stroke-width="0.3125" d="M0.943,44.131
+	<path id="base"  fill="#ED1C24" stroke="#231F20" stroke-width="0.3125" d="M0.943,44.131
 		C9.675-3.163,6.286,1.452,15.21,1.275h23.44c8.926,0.177,5.535-4.438,14.265,42.856H0.943z"/>
 </g>
 <g id="design">
