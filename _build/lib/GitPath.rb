@@ -1,3 +1,4 @@
+# @TODO vestigial code from PHP. Still necessary?
 class GitPath
 	def initialize (path)
 		@path = path

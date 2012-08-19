@@ -3,17 +3,17 @@ include OSFunctions
 
 	def generateCommand()
 		if OSFunctions::is_windows?
-			cmd = "inkscapec.exe ";
+			cmd = "inkscapec.exe "
 		else
 			cmd = "inkscape "
 		end
 		
 		case @format
-			when "ps":
+			when "ps"
 				cmd = cmd + "--export-ps=\"" + @outfile + "\" ";
-			when "eps":
+			when "eps"
 				cmd = cmd + "--export-eps=\"" + @outfile + "\" ";
-			when "pdf":
+			when "pdf"
 				cmd = cmd + "--export-pdf=\"" + @outfile + "\" ";
 			else
 				cmd = cmd + "--export-png=\"" + @outfile + "\" ";

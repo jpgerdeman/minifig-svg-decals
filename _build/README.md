@@ -1,0 +1,1 @@
+See [the wiki](https://github.com/jpgerdeman/minifig-svg-decals/wiki/building-the-site) for a description

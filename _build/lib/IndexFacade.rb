@@ -1,10 +1,10 @@
+# Facade to several indices
 class IndexFacade < Index
 
 	def initialize(config)
 		@indices = Hash.new("nil")
 		@logger = nil
 		@config = config
-		@indices['a'] = 100
 	end
     
 	def addDecal(decal)
@@ -20,32 +20,30 @@ class IndexFacade < Index
     
     def fetchLocalIndex()    
 		file = getLocalIndexPath()
-        unless( @indices.has_key?(file) )  
+		key = relativePath(file.dup, false)		
+        unless( @indices.has_key?(key) )  
 			i = Index.new(file)
-			puts "TemplatePath"
-			puts getTemplate()
 			i.setTemplate(getTemplate())			
 			i.reset()
 			i.replaceBasePath(@config.ghpath, @config.base_url)			
-            @indices[file] = i
+            @indices[key] = i
         end
-        return @indices[file]
+        return @indices[key]
     end
     
     def fetchGlobalIndex()
 		puts 'fetchGlobalIndex'
-		file = getGlobalIndexPath()
-		puts file
-        unless( @indices.has_key?(file) )  
+		file = getGlobalIndexPath()		
+		key = relativePath(file.dup, false)		
+        unless( @indices.has_key?(key) )  
 			i = Index.new(file)
 			i.setTitle('Decal Overview')
 			i.setTemplate(getTemplate())			
 			i.reset()
 			i.replaceBasePath(@config.ghpath, @config.base_url)			
-            @indices[file] = i
-        end
-        
-         @indices[file]
+            @indices[key] = i
+        end        
+         @indices[key]
     end
     
 	def getLocalIndexPath()					
@@ -56,21 +54,52 @@ class IndexFacade < Index
 		File.join(@config.ghpath,'decals/index.html')
 	end
         
-    def generateMenu()
-        menu = ''
-        @indices.each_pair do |path,index|        
-            rPath  = relativePath(path)
-            title = path.split('/')[-2]
-            depth = path.split('/').count()            
-            cls = "depth-" + depth
-            menu = menu + "<li class='#{cls}'><a class='#{cls}' href='{{site.url}}#{rPath}'>#{title}</a></li>\n"
+    def computeNestedDirectories( dirList )
+		nestedDirList = Hash.new(nil)
+		dirList.each_pair do |key,index|        
+			path = key.dup()
+            rPath  = relativePath(path, false)
+            pathList = path.split('/')
+
+            curLvl = nestedDirList 
+            compoundDir = ''           
+            pathList.each do |dir|
+				if( dir != 'index.html' )
+					compoundDir = File.join(compoundDir, dir)
+					if( curLvl[compoundDir] == nil )
+						curLvl[compoundDir] = Hash.new(nil)
+					end
+					curLvl = curLvl[compoundDir]
+				end
+            end
+		end
+		nestedDirList
+	end
+
+    def generateMenu( nestedList )    	        
+        itemList = ''
+        nestedList.each_pair do |dir,children|      
+			title = dir.split('/')[-1]
+			index = File.join(dir + '/index.html')
+			pp index
+			if( @indices.has_key?(index) )				
+        		title = "<a href='{{site.url}}#{index}'>#{title}</a>"
+			else
+				title = "<span class='no-index'>#{title}</span>"
+        	end
+        	subList = generateMenu(children)        	
+        	item = "<li>#{title}\n    #{subList}</li>\n"        		
+        	itemList = itemList + item
         end
         
-         '<ul>' + menu + '</ul>'
+         '<ul>' + itemList + '</ul>'
     end
-	
-    def writeMenu()    
-        menu = generateMenu()
+    	
+    def writeMenu()        	            	
+    	nestedList = computeNestedDirectories(@indices)
+    	pp nestedList
+    	pp @indices
+        menu = generateMenu(nestedList)
         menufile = File.join(File.expand_path(File.expand_path(File.dirname(__FILE__)) + '/../../'),'_includes','decal_menu')
         FileUtils::safe_unlink(menufile)			        
         open(menufile, 'a') do |f|

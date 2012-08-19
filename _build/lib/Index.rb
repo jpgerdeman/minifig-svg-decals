@@ -60,7 +60,7 @@ class Index
 		@newpath = newpath
     end
     
-    def relativePath(path, appendbaseurl = true)		
+    def relativePath(path, appendbaseurl = true)
 		path.gsub!(@oldpath, '/')
 		path.gsub!('//', '/')
 		if appendbaseurl
@@ -81,8 +81,8 @@ class Index
 			$css = ''
 		end
 		load(getTemplate())
-		puts $html
-		puts '---------------'
+		#puts $html
+		#puts '---------------'
 		$html
     end
     
