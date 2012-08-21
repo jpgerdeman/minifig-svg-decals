@@ -1,5 +1,5 @@
 class Index
-
+include LoggerTrait
     def initialize( path )
 		@title = nil
 		@path = nil
@@ -48,7 +48,7 @@ class Index
     end
         
     def addDecal( decal )    
-		puts @path
+		@logger.debug(@path)
         @currentDecal = decal        
 		html = renderHtml()
 		appendIndex(html)
@@ -96,7 +96,7 @@ class Index
 
     def reset()	
 			file = getPath()
-			puts "resetting #{file}"
+			@logger.debug("resetting #{file}")
 			FileUtils::safe_unlink(file)			
 			template = File.join(File.dirname(__FILE__), '..','templates','index.html')
 			html = File.open(template, 'r')			

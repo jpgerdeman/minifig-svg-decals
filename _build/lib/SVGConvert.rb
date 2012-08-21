@@ -1,4 +1,5 @@
 class SVGConvert
+	include LoggerTrait
 	def initialize()
 		@dpi = nil
 		@width = nil
@@ -34,8 +35,8 @@ class SVGConvert
 
 	def execute()
 		cmd = generateCommand()
-		puts "running command #{cmd}"
-		output = system(cmd)
+		@logger.debug( "running command #{cmd}" )
+		output = system(cmd)		
 	end
 
 	def generateCommand()
@@ -50,8 +51,6 @@ class SVGConvert
 		end
 
 		cmd = cmd + @infile + ' > ' + @outfile
-
-		puts cmd
 
 		return cmd
 	end

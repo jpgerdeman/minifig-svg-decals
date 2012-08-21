@@ -4,7 +4,7 @@ class LazyDecalWorker < DecalWorker
 	# @inheritdoc	
 	def setDecal(d)
 		@changed = nil
-		super.setDecal(d)
+		@decal = d
         self
     end
 	

@@ -1,6 +1,6 @@
 # Facade to several indices
 class IndexFacade < Index
-
+include LoggerTrait
 	def initialize(config)
 		@indices = Hash.new("nil")
 		@logger = nil
@@ -8,13 +8,11 @@ class IndexFacade < Index
 	end
     
 	def addDecal(decal)
-		puts 'adding' + decal.to_s()
+		@logger.info 'adding' + decal.to_s()
 		@currentDecal = decal
 		local = fetchLocalIndex()
 		global = fetchGlobalIndex()
-		puts "adding local"
         local.addDecal(decal)
-        puts "adding global"
         global.addDecal(decal)        
 	end
     
@@ -23,6 +21,7 @@ class IndexFacade < Index
 		key = relativePath(file.dup, false)		
         unless( @indices.has_key?(key) )  
 			i = Index.new(file)
+            i.setLogger( @logger )
 			i.setTemplate(getTemplate())			
 			i.reset()
 			i.replaceBasePath(@config.ghpath, @config.base_url)			
@@ -32,11 +31,11 @@ class IndexFacade < Index
     end
     
     def fetchGlobalIndex()
-		puts 'fetchGlobalIndex'
 		file = getGlobalIndexPath()		
 		key = relativePath(file.dup, false)		
         unless( @indices.has_key?(key) )  
 			i = Index.new(file)
+            i.setLogger( @logger )
 			i.setTitle('Decal Overview')
 			i.setTemplate(getTemplate())			
 			i.reset()

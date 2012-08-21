@@ -3,7 +3,6 @@
 # The decal worker brings together the decal, which knows everything about its
 # paths, and the execution.
 class DecalWorker
-
 	def setDecal(d)
 		@decal = d
         self
