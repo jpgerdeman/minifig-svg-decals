@@ -82,7 +82,7 @@ include LoggerTrait
 			index = File.join(dir + '/index.html')
 			pp index
 			if( @indices.has_key?(index) )				
-        		title = "<a href='{{site.url}}/{{site.base-url}}#{index}'>#{title}</a>"
+        		title = "<a href='{{site.url}}/{{site.baseurl}}#{index}'>#{title}</a>"
 			else
 				title = "<span class='no-index'>#{title}</span>"
         	end

@@ -1,67 +1,67 @@
 <ul><li><span class='no-index'></span>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/index.html'>decals</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/index.html'>decals</a>
     <ul><li><span class='no-index'>elements</span>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/elements/shields/index.html'>shields</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/elements/shields/index.html'>shields</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/elements/tiles/index.html'>tiles</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/elements/tiles/index.html'>tiles</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/elements/wedge/index.html'>wedge</a>
-    <ul></ul></li>
-</ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/faces/index.html'>faces</a>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/faces/animals/index.html'>animals</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/elements/wedge/index.html'>wedge</a>
     <ul></ul></li>
 </ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/index.html'>figures</a>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/figures/city-farm/index.html'>city-farm</a>
-    <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/fantasy/index.html'>fantasy</a>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/figures/fantasy/Harry Potter/index.html'>Harry Potter</a>
-    <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/fantasy/Lord of the Rings/index.html'>Lord of the Rings</a>
-    <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/fantasy/Percy Jackson/index.html'>Percy Jackson</a>
-    <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/fantasy/Zelda/index.html'>Zelda</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/faces/index.html'>faces</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/faces/animals/index.html'>animals</a>
     <ul></ul></li>
 </ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/historic/index.html'>historic</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/index.html'>figures</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/city-farm/index.html'>city-farm</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/other/index.html'>other</a>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/figures/other/sherlock-bbc/index.html'>sherlock-bbc</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/fantasy/index.html'>fantasy</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/fantasy/Harry Potter/index.html'>Harry Potter</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/other/tlg.dino/index.html'>tlg.dino</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/fantasy/Lord of the Rings/index.html'>Lord of the Rings</a>
+    <ul></ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/fantasy/Percy Jackson/index.html'>Percy Jackson</a>
+    <ul></ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/fantasy/Zelda/index.html'>Zelda</a>
+    <ul></ul></li>
+</ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/historic/index.html'>historic</a>
+    <ul></ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/other/index.html'>other</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/other/sherlock-bbc/index.html'>sherlock-bbc</a>
+    <ul></ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/other/tlg.dino/index.html'>tlg.dino</a>
     <ul></ul></li>
 </ul></li>
 <li><span class='no-index'>scifi</span>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/figures/scifi/star wars/index.html'>star wars</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/scifi/star wars/index.html'>star wars</a>
     <ul></ul></li>
 </ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/figures/super heroes/index.html'>super heroes</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/figures/super heroes/index.html'>super heroes</a>
     <ul></ul></li>
 </ul></li>
 <li><span class='no-index'>library</span>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/library/armor/index.html'>armor</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/library/armor/index.html'>armor</a>
     <ul></ul></li>
 <li><span class='no-index'>clothes</span>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/library/clothes/belts/index.html'>belts</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/library/clothes/belts/index.html'>belts</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/clothes/coats/index.html'>coats</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/clothes/coats/index.html'>coats</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/clothes/other/index.html'>other</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/clothes/other/index.html'>other</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/clothes/shirts/index.html'>shirts</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/clothes/shirts/index.html'>shirts</a>
     <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/clothes/skirts/index.html'>skirts</a>
-    <ul></ul></li>
-</ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/logos/index.html'>logos</a>
-    <ul></ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/library/torsos/index.html'>torsos</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/clothes/skirts/index.html'>skirts</a>
     <ul></ul></li>
 </ul></li>
-<li><a href='{{site.url}}/{{site.base-url}}/decals/resources/index.html'>resources</a>
-    <ul><li><a href='{{site.url}}/{{site.base-url}}/decals/resources/templates/index.html'>templates</a>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/logos/index.html'>logos</a>
+    <ul></ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/library/torsos/index.html'>torsos</a>
+    <ul></ul></li>
+</ul></li>
+<li><a href='{{site.url}}/{{site.baseurl}}/decals/resources/index.html'>resources</a>
+    <ul><li><a href='{{site.url}}/{{site.baseurl}}/decals/resources/templates/index.html'>templates</a>
     <ul></ul></li>
 </ul></li>
 </ul></li>
