@@ -37,6 +37,7 @@ class Command
 		loaded_data = YAML.load(ERB.new(File.read(@options.config_file)).result)
 		loaded_data['app_root'] = app_root
 		@config = MyConfig.new(loaded_data)
+		@config.masterpath = File.realpath(@config.masterpath)
 	end
 
 	def parseoptions(arguments)
@@ -84,7 +85,6 @@ Usage: ruby run.rb\n\n"
 	def execute()		
 		log = Logger.new(STDOUT)
 		log.progname  = 'minifig build'
-		pp @options
 		if(@options.verbose)
 			log.level = Logger::DEBUG
 		else
@@ -100,6 +100,8 @@ Usage: ruby run.rb\n\n"
 		indices.setLogger( log )
 		indices.setTemplate(File.join(@config.app_root ,'templates','decal.template'))
 		indices.replaceBasePath(@config.ghpath, @config.base_url)
+
+		log.info('Looking for masterpath in ' + @config.masterpath)
 
 		Find.find(@config.masterpath) do |file|	
 			path = GitPath.new(file)
