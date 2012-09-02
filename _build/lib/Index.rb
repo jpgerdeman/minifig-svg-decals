@@ -61,12 +61,15 @@ include LoggerTrait
     end
     
     def relativePath(path, appendbaseurl = true)
+    	@logger.debug('realtivepath of ' + path)
+    	@logger.debug('realtivepath newpath ' + @newpath)
+    	@logger.debug('realtivepath oldpath ' + @oldpath)
 		path.gsub!(@oldpath, '/')
 		path.gsub!('//', '/')
 		if appendbaseurl
-			path = File.expand_path(path, @newpath)
+			path = File.join( @newpath, path )
 		end
-		
+		@logger.debug('realtivepath is ' + path)
 		path
 	end
     
