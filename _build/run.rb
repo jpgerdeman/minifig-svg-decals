@@ -47,6 +47,7 @@ class Command
 	    options.skip_index = false
 	    options.config_file = 'config.yml'
 	    options.verbose = false
+	    options.lazy = false
 
 	    # define Option parser behaviour and fill options
 	    optparse =OptionParser.new do |opt|
@@ -63,6 +64,9 @@ Usage: ruby run.rb\n\n"
 	      end      
 	      opt.on("-i", "--skip-index", "do not create indices") do |dir|
 	            options.skip_index = dir
+              end
+	      opt.on("-l", "--lazy", "Only handle newer files") do |dir|
+	            options.lazy = dir
               end
 	      opt.on("-c", "--config FILE", "supply custom config file") do |dir|
 	            options.config_file = dir
@@ -94,7 +98,11 @@ Usage: ruby run.rb\n\n"
 		tbrenderer.setLogger( log )
 		pngrenderer = SVGConvert.factory(@config.renderer).setDpi(@config.output_dpi)
 		pngrenderer.setLogger( log )
+
 		worker = DecalWorker.new().setThumbnailRenderer(tbrenderer).setPngRenderer(pngrenderer)		
+		if(@options.lazy)
+			worker = LazyDecalWorker.new(worker)
+		end
 
 		indices = IndexFacade.new(@config)
 		indices.setLogger( log )
@@ -106,6 +114,7 @@ Usage: ruby run.rb\n\n"
 		Find.find(@config.masterpath) do |file|	
 			path = GitPath.new(file)
 			if path.isSvg()		
+				puts file
 			    d = Decal.new(file, @config.masterpath, @config.ghpath + '/decals')
 	    
 			    FileUtils.mkdir_p File.dirname(d.computeTargetPath())
@@ -114,9 +123,10 @@ Usage: ruby run.rb\n\n"
 			    end
 
 			    worker.setDecal(d)
-			    unless( @options.skip_render )
+			    unless( @options.skip_render )			    	
 				    worker.renderPng()
 				    worker.renderThumbnail()
+				    worker.copySVG()
 			    end
 			end
 		end

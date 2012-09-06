@@ -1,10 +1,19 @@
 # The lazy decal worker only executes, if a svg file has changed.
-class LazyDecalWorker < DecalWorker
+class LazyDecalWorker
+
+	def initialize( worker )
+		@worker = worker
+	end
 
 	# @inheritdoc	
 	def setDecal(d)
 		@changed = nil
 		@decal = d
+		@worker.setDecal(d)
+
+		has = haschanged()? 'has' : 'has not'
+		puts "#{@decal.getSourcePath()} #{has} changed "
+
         self
     end
 	
@@ -12,7 +21,7 @@ class LazyDecalWorker < DecalWorker
 	# will ony execute if the svg file has changed
 	def copySVG()
 		if( haschanged() )
-			super.copySVG()
+			@worker.copySVG()
 		end
 	end
 
@@ -20,7 +29,7 @@ class LazyDecalWorker < DecalWorker
 	# will ony execute if the svg file has changed
 	def renderThumbnail()	
 		if( haschanged() )
-			super.renderThumbnail()
+			@worker.renderThumbnail()
 		end
 	end
 
@@ -28,7 +37,7 @@ class LazyDecalWorker < DecalWorker
 	# will ony execute if the svg file has changed
 	def renderPng()	
 		if( haschanged() )
-			super.renderPng()
+			@worker.renderPng()
 		end
 	end
 
@@ -37,7 +46,11 @@ class LazyDecalWorker < DecalWorker
 		# Only compute the difference in time once. Since it compares the svg files
 		# it would return false after the svg file has been copied.
 		if( @changed == nil )
-			@changed = !File.compare(@decal.getSourcePath(),@decal.computeTargetPath())
+			if( File.exists?( @decal.computeTargetPath()) )
+				@changed = !FileUtils.cmp(@decal.getSourcePath(),@decal.computeTargetPath())
+			else
+				@changed = true
+			end
 		end
 		@changed
 	end

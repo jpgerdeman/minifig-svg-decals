@@ -10,13 +10,13 @@ include OSFunctions
 		
 		case @format
 			when "ps"
-				cmd = cmd + "--export-ps=\'" + @outfile + "\' ";
+				cmd = cmd + "--export-ps=\"" + @outfile + "\" ";
 			when "eps"
-				cmd = cmd + "--export-eps=\'" + @outfile + "\' ";
+				cmd = cmd + "--export-eps=\"" + @outfile + "\" ";
 			when "pdf"
-				cmd = cmd + "--export-pdf=\'" + @outfile + "\' ";
+				cmd = cmd + "--export-pdf=\"" + @outfile + "\" ";
 			else
-				cmd = cmd + "--export-png=\'" + @outfile + "\' ";
+				cmd = cmd + "--export-png=\"" + @outfile + "\" ";
 		end
 		
 		unless @width == nil		
@@ -27,7 +27,7 @@ include OSFunctions
 			cmd = cmd + "--export-dpi=" + @dpi.to_s() + " "
 		end
 
-		cmd = cmd + "\'" + @infile + "\'";		
+		cmd = cmd + "\"" + @infile + "\"";		
 	
 		return cmd;
 	end

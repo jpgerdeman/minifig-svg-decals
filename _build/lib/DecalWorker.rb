@@ -10,7 +10,7 @@ class DecalWorker
 	
 	# Copies a Decal from the source directory to the target directory
 	def copySVG()
-		copy(@decal.getSourcePath(), @decal.computeTargetPath())
+		FileUtils.copy(@decal.getSourcePath(), @decal.computeTargetPath())
 	end
 
 	# Renders a preview of the decal.
